@@ -54,7 +54,8 @@ function getArticleExtract(url) {
                 if (data.success) {
                     // console.clear()
                     data = data.data;
-                    console.log(data.data.data.title);
+                    console.log(data);
+                    // console.log(data.data.data.title);
                     let title = data.data.title ? data.data.title : ``;
                     let content = data.data.html ? data.data.html : ``;
                     let pageUrl = data.data.pageUrl ? data.data.pageUrl : ``;
