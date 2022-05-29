@@ -64,6 +64,7 @@ function getArticleExtract(url) {
                     let authorUrl = data.data.authorUrl ? data.data.authorUrl : ``;
                     let siteName = data.data.siteName ? data.data.siteName : ``;
                     let date = data.data.date ? new Date(data.data.date).toLocaleString("en-GB") : ``;
+                    console.log(title,content,date);
                     $("#wpContent").append(`<h1>${title}</h1>`);
                     $("#wpContent").append(`<h2>${date}</h2>`);
                     $("#wpContent").append(`<p class="small">${content}<p>`);
