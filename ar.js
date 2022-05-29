@@ -54,7 +54,7 @@ function getArticleExtract(url) {
                 if (data.success) {
                     // console.clear()
                     data = data.data;
-                    // console.log(data.data.data.title);
+                    console.log(data.data.data.title);
                     let title = data.data.title ? data.data.title : ``;
                     let content = data.data.html ? data.data.html : ``;
                     let pageUrl = data.data.pageUrl ? data.data.pageUrl : ``;
@@ -110,6 +110,7 @@ function getArticleExtract(url) {
             })
         },
     ])
+    $("#loader").attr("style", "none");
 
 }
 
@@ -118,8 +119,10 @@ async function fetchURL(url) {
     const text = await response.text();
     try {
         const data = JSON.parse(text);
+        console.log({ success: 1, urlfetched: url, data: data })
         return { success: 1, urlfetched: url, data: data }
     } catch (err) {
+        console.log({ success: 0, urlfetched: url, data: data })
         return { success: 0, urlfetched: url, error: err, response: text }
     }
 }
