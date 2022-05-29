@@ -19,36 +19,36 @@ function getArticleExtract(url) {
                 return next(new Error('Cannot get Data'))
             })
         },
-        (next) => {
-            fetchURL(`https://api.outline.com/v3/parse_article?source_url=${url}`).then(data => {
-                if (data.success) {
-                    data = data.data;
-                    if (data.data.site_name == "Outline") {
-                        return next(new Error('Cannot get Data'))
-                    } else {
-                        // console.clear()
-                        let title = data.data.title ? data.data.title : ``;
-                        let content = data.data.html ? data.data.html : ``;
-                        let pageUrl = data.data.article_url ? data.data.article_url : ``;
-                        let icon = data.data.icon ? data.data.icon : ``;
-                        let author = data.data.author ? data.data.author : ``;
-                        let siteName = data.data.site_name ? data.data.site_name : ``;
-                        let date = data.data.date ? data.data.date : ``;
-                        $("#wpContent").append(`<h1>${title}</h1>`);
-                        $("#wpContent").append(`<h2>${date}</h2>`);
-                        $("#wpContent").append(`<p class="small">${content}<p>`);
-                        $("#wpContent").append(`<p class="small d-flex-justify-content-center">Via: Outline.com/<p>`);
-                    }
+        // (next) => {
+        //     fetchURL(`https://api.outline.com/v3/parse_article?source_url=${url}`).then(data => {
+        //         if (data.success) {
+        //             data = data.data;
+        //             if (data.data.site_name == "Outline") {
+        //                 return next(new Error('Cannot get Data'))
+        //             } else {
+        //                 // console.clear()
+        //                 let title = data.data.title ? data.data.title : ``;
+        //                 let content = data.data.html ? data.data.html : ``;
+        //                 let pageUrl = data.data.article_url ? data.data.article_url : ``;
+        //                 let icon = data.data.icon ? data.data.icon : ``;
+        //                 let author = data.data.author ? data.data.author : ``;
+        //                 let siteName = data.data.site_name ? data.data.site_name : ``;
+        //                 let date = data.data.date ? data.data.date : ``;
+        //                 $("#wpContent").append(`<h1>${title}</h1>`);
+        //                 $("#wpContent").append(`<h2>${date}</h2>`);
+        //                 $("#wpContent").append(`<p class="small">${content}<p>`);
+        //                 $("#wpContent").append(`<p class="small d-flex-justify-content-center">Via: Outline.com/<p>`);
+        //             }
 
-                } else {
-                    console.log(`Outline did not work`);
-                    return next(new Error('Cannot get Data'))
-                }
-            }).catch(err => {
-                console.log(err);
-                return next(new Error('Cannot get Data'))
-            })
-        },
+        //         } else {
+        //             console.log(`Outline did not work`);
+        //             return next(new Error('Cannot get Data'))
+        //         }
+        //     }).catch(err => {
+        //         console.log(err);
+        //         return next(new Error('Cannot get Data'))
+        //     })
+        // },
         (next) => {
             fetchURL(`https://api-panda.com/v2/feeds/story/full?url=${url}`).then(data => {
                 if (data.success) {
