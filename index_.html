@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Article Reader</title>
+  </head>
+  <body class="" style="background-color: #e9e9e9 !important; ">
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"
+                style="color: #000; text-decoration: underline; text-decoration-color: #ffc107;">Sharad Bapat</a>
+        </div>
+    </nav>    
+
+    <div class="container" style="display:none">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-10">
+                <p>
+                    Enter the URL of the article
+                </p>
+                <div class="input-group mt-3 mb-3">
+                    <input type="text" value="https://en.wikipedia.org/wiki/Thomas_Hatcher" id="input-url"
+                        class="form-control" aria-label="Enter text here" aria-describedby="button-places"
+                        style="outline: none; background-color: #212529;;caret-color:#fff;color:#fff;"
+                        placeholder="Enter text here">
+                    <button title="Run Cell" class="btn btn-info" style="border:none" type="button" id="button-analyze">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-play" viewBox="0 0 16 16">
+                            <path
+                                d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z" />
+                        </svg></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="px-4 py-5 my-3 text-center" id="loader" style="display: none;">
+        <div class="col-lg-6 mx-auto">
+            <div class="spinner-border text-info" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-10" id="wpContent" style="border: solid; box-shadow: 1px 2px; background-color: #f8f8f8 !important;">
+              
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="jquery.js"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!--Async JS-->
+    <script type="text/javascript" src="async.js"></script>
+    <script type="text/javascript" src="mercury.js"></script>
+    <script type="text/javascript" src="ar.js"></script>
+    
+  </body>
+</html>

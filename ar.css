@@ -1,0 +1,16 @@
+﻿body {
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,sans-serif;
+    box-sizing: border-box;
+    letter-spacing: -0.3px !important;
+}
+
+.wpContent {
+    max-width: 900px !important;   
+    cursor: default !important;
+    position: relative !important;
+    border: 1px solid !important;
+    margin: auto !important;
+    background-color:#fff !important;
+    
+
+}
